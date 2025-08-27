@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  db:
+      image: mysql:8.0
+      container_name: my-mysql
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: Dekflife@4488
+      ports:
+        - '3306:3306'
+      volumes:
+        - ./mysql-data:/var/lib/mysql
+         - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: my-phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PM_HOST: db
+      PM_USER: root
+      PM_PASSWORD: theifbank123
+
