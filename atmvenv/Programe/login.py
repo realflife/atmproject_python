@@ -46,9 +46,11 @@ def register():
     con.commit()
     cur.close()
     con.close()
+    print(f"Bank ID ของคุณคือ : {acc_id}")
     print("Register Successful")
     
 def login():
+    print("======LOGIN======")
     while True:
         username = input("Enter Username : ")
         pass_word = input("Enter Password : ")
