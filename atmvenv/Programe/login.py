@@ -19,13 +19,13 @@ def register():
             cur.close()
             con.close()
             break
-    allowed_gender = ("M","N","U")
+    allowed_gender = ("M","F","U")
     password = input("Enter password : ")
     f_name = input("Enter Firsname : ")
     l_name = input("Enter Lastname : ")
     while True:
         try:
-            gender = input("กรุณากรอกเพศของคุณ [M:เพศชาย / F:เพศหญิง / U = เพศทางเลือก] : ").strip()
+            gender = input("กรุณากรอกเพศของคุณ [M:เพศชาย / N:เพศหญิง / U = เพศทางเลือก] : ").strip()
             if gender not in allowed_gender:
                 raise ValueError("กรุณากรอกข้อมูลที่เป็นตัวอักษรและเป็นตัวอักษร [M:F:U] เท่านั้น")
         except ValueError as v:
